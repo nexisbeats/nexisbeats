@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nexis Beats</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #121212;
+  color: white;
+}
+
+/* HEADER */
+header {
+  background: black;
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* MAIN */
+.container {
+  padding: 20px;
+}
+
+/* PLAYER */
+.player {
+  background: #181818;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+iframe {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+}
+
+/* TRACK LIST */
+.track {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+.track-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.track-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+/* BUTTON */
+button {
+  background: #1db954;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buy {
+  background: orange;
+  color: black;
+}
+
+/* FOOTER PLAYER */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #181818;
+  padding: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>🎧 Nexis Beats</header>
+
+<div class="container">
+
+  <h2>Now Playing</h2>
+
+  <div class="player">
+    <iframe id="mainPlayer" src="https://drive.google.com/file/d/1ZKequOhK-gOqoaSBbpLU4otuOejY195M/preview"></iframe>
+  </div>
+
+  <h2>🔥 Beat Library</h2>
+
+  <!-- TRACK 1 -->
+  <div class="track">
+    <div class="track-title">Afrobeat Vibe</div>
+    <div class="track-buttons">
+      <button onclick="playTrack('1ZKequOhK-gOqoaSBbpLU4otuOejY195M')">▶ Play</button>
+      <a href="https://www.paypal.com/ncp/payment/P8WHUFVN4WWSS" target="_blank">
+        <button class="buy">💰 Buy</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- TRACK 2 -->
+  <div class="track">
+    <div class="track-title">Chill Afrobeat</div>
+    <div class="track-buttons">
+      <button onclick="playTrack('1ZKequOhK-gOqoaSBbpLU4otuOejY195M')">▶ Play</button>
+      <a href="https://www.paypal.com/ncp/payment/P8WHUFVN4WWSS" target="_blank">
+        <button class="buy">💰 Buy</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- TRACK 3 -->
+  <div class="track">
+    <div class="track-title">Trap Energy</div>
+    <div class="track-buttons">
+      <button onclick="playTrack('1ZKequOhK-gOqoaSBbpLU4otuOejY195M')">▶ Play</button>
+      <a href="https://www.paypal.com/ncp/payment/P8WHUFVN4WWSS" target="_blank">
+        <button class="buy">💰 Buy</button>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <iframe id="footerPlayer" src="https://drive.google.com/file/d/1ZKequOhK-gOqoaSBbpLU4otuOejY195M/preview"></iframe>
+</div>
+
+<script>
+function playTrack(id) {
+  let url = "https://drive.google.com/file/d/" + id + "/preview";
+  document.getElementById("mainPlayer").src = url;
+  document.getElementById("footerPlayer").src = url;
+}
+</script>
+
+</body>
+</html>
